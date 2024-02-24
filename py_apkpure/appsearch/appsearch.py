@@ -131,12 +131,13 @@ class AppSearch:
 
     def __parse_app_result(self, app_block):
         """Parses and returns a single app result dictionary."""
+
         return {
             "name": app_block.find("p", class_="p1").text.replace("\n", "").strip(),
             "developer": app_block.find("p", class_="p2")
             .text.replace("\n", "")
             .strip(),
-            "tags": [
+            "tags": [] if app_block.find("div", class_="tags") is None else [
                 tag.text
                 for tag in app_block.find("div", class_="tags").findAll(
                     "span", class_="tag"

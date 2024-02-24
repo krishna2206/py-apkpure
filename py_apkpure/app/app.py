@@ -77,7 +77,7 @@ class App:
         #? Parse from details in top
         detail_top = soup.find("div", class_="detail_top")
 
-        #! print(detail_top)
+        # print(detail_top)
 
         app_data["icon"] = {
             "128": Helpers.set_icon_res(detail_top.find("div", class_="apk_info").find("img")["srcset"].replace(" 2x", ""), res=128),
@@ -97,7 +97,7 @@ class App:
         app_data["size"] = float(download_button["data-dt-file_size"])
         app_data["package_name"] = download_button["data-dt-package_name"]
         try:
-            app_data["rating"] = float(detail_top.find("span", attrs={"itemprop": "ratingValue"}).text)
+            app_data["rating"] = float(detail_top.find("span", attrs={"class": "details_stars icon"}).text)
         except AttributeError:
             app_data["rating"] = None
 
