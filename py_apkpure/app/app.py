@@ -6,7 +6,7 @@ import cloudscraper
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
-from helpers import Helpers
+from py_apkpure.helpers import Helpers
 
 
 class App:

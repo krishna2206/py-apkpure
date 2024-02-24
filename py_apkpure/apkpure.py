@@ -1,7 +1,7 @@
 import cloudscraper
 
-from appsearch import AppSearch
-from app import App
+from py_apkpure.appsearch import AppSearch
+from py_apkpure.app import App
 
 
 class Apkpure:

@@ -1,7 +1,7 @@
 import cloudscraper
 from bs4 import BeautifulSoup
 
-from helpers import Helpers
+from py_apkpure.helpers import Helpers
 
 
 URL = "https://apkpure.fr"
