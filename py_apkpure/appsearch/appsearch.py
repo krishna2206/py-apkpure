@@ -83,6 +83,12 @@ class AppSearch:
             return {
                 "name": brand_info_block.find("p", class_="p1").text.strip(),
                 "developer": brand_info_block.find("p", class_="p2").text.strip(),
+                "tags": [
+                    Helpers.clean_value(tag.text)
+                    for tag in brand_info_block.find("div", class_="first-tags brand-tags").findAll(
+                        "a", class_="tag"
+                    )
+                ],
                 "icon": {
                     "128": Helpers.set_icon_res(brand_icon_url, res=128),
                     "256": Helpers.set_icon_res(brand_icon_url, res=256),
@@ -96,6 +102,12 @@ class AppSearch:
             return {
                 "name": first_apk_block.find("p", class_="p1").text.strip(),
                 "developer": first_apk_block.find("p", class_="p2").text.strip(),
+                "tags": [
+                    Helpers.clean_value(tag.text)
+                    for tag in first_apk_block.find("div", class_="first-tags").findAll(
+                        "div", class_="tag"
+                    )
+                ],
                 "icon": {
                     "128": Helpers.set_icon_res(first_apk_icon_url, res=128),
                     "256": Helpers.set_icon_res(first_apk_icon_url, res=256),
