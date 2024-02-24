@@ -1,0 +1,1 @@
+from .appsearch import AppSearch
