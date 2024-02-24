@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '2024.02.25'
+VERSION = '2024.02.25-post1'
 DESCRIPTION = 'A Python package for searching apps in Apkpure'
 
 setup(

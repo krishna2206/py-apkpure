@@ -88,7 +88,7 @@ class AppSearch:
                     "256": Helpers.set_icon_res(brand_icon_url, res=256),
                     "512": Helpers.set_icon_res(brand_icon_url, res=512),
                 },
-                "url": URL + brand_info_block.find("a", class_="first-info brand-info")["href"],
+                "url": brand_info_block.find("a", class_="first-info brand-info")["href"],
             }
         elif first_apk_block:
             # Parse first apk info with multiple icon resolutions
@@ -101,7 +101,7 @@ class AppSearch:
                     "256": Helpers.set_icon_res(first_apk_icon_url, res=256),
                     "512": Helpers.set_icon_res(first_apk_icon_url, res=512),
                 },
-                "url": URL + first_apk_block.find("a", class_="first-info")["href"],
+                "url": first_apk_block.find("a", class_="first-info")["href"],
             }
         else:
             return None
@@ -141,5 +141,5 @@ class AppSearch:
                     app_block.find("div", class_="l").find("img")["src"], res=512
                 ),
             },
-            "url": URL + app_block.find("a", class_="dd")["href"],
+            "url": app_block.find("a", class_="dd")["href"],
         }
